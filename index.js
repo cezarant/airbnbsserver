@@ -21,7 +21,7 @@ const getReviews = async () => {
   try {
     await client.connect();
     const collection = client.db("sample_airbnb").collection("listingsAndReviews");
-    return await collection.find({ beds : 5}).limit(100).toArray();        
+    return await collection.find({ beds : 5}).limit(200).toArray();        
   } catch (error) {
     console.error(`Connection error: ${error.stack} on Worker process: ${process.pid}`)
     process.exit(1)
