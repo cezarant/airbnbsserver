@@ -1,4 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
+const dotenv = require('dotenv');
+dotenv.config();    
 const uri = process.env.MONGO_ATLAS_DB;
 const client = new MongoClient(uri, { useNewUrlParser: true });
 const { ApolloServer, gql } = require('apollo-server');
@@ -14,7 +16,7 @@ const typeDefs = `
     beds: Int! 
     room_type : String!
     bedrooms: Float!
-  }  
+  }
 `;
 
 const getReviews = async () => {
